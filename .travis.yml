@@ -12,4 +12,4 @@ install:
 before_script:
 - /tmp/bin/box server start
 script:
-- ".test/test.sh"
+- "./test/test.sh"
