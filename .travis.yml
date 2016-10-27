@@ -10,6 +10,6 @@ install:
 - unzip /tmp/box.zip -d /tmp/bin
 - /tmp/bin/box install
 before_script:
-- /tmp/bin/box server start port=8000
+- /tmp/bin/box server start
 script:
 - ".test/test.sh"
