@@ -1,0 +1,43 @@
+[
+	{
+		"url":"https://www.google.com/robots.txt",
+		"title":"Google",
+		"expect":"200"
+	},
+	{
+		"url":"https://www.sandbox.paypal.com/robots.txt",
+		"title":"PayPal: SHA-256 Cert",
+		"expect":"200"
+	},
+	{
+		"url":"https://mozilla-modern.badssl.com/",
+		"title":"TLS 1.2 / Mozilla Modern Configuration",
+		"expect":"200"
+	},
+	{
+		"url":"https://mozilla-intermediate.badssl.com/",
+		"title":"Mozilla Intermediate Configuration",
+		"expect":"200"
+	},
+	{
+		"url":"https://mozilla-old.badssl.com/",
+		"title":"Mozilla Old Browser Configuration",
+		"expect":"200"
+	},
+	{
+		"url":"https://self-signed.badssl.com/",
+		"title":"Self Signed Certificate",
+		"expect":"exception"
+	},
+	{
+		"url":"https://expired.badssl.com/",
+		"title":"Expired Certificate",
+		"expect":"exception"
+	},
+	{
+		"url":"https://1000-sans.badssl.com/",
+		"title":"Subject Alt Names - 1000 SAN Certificate",
+		"expect":"200"
+	}
+
+]
