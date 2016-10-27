@@ -10,7 +10,7 @@ Here's a simple example:
 	response = bolt.request(url="http://httpbin.org/robots.txt", method="GET");
 	writeOutput(response.fileContent);
 
-The return value of `request value is a `struct` that contains keys _mostly_ compatibale with what the `cfhttp` tag would return. 
+The return value of `request` value is a `struct` that contains keys _mostly_ compatibale with what the `cfhttp` tag would return. 
 
 The request method has the following signature:
 
@@ -40,4 +40,6 @@ _The requirement of ColdFusion 9+ is mainly due to it being written as a script 
 
 ## Why use it?
 
-* Consistent implementation of CFHTTP
+* Consistent implementation of CFHTTP across various CFML engine versions.
+* Ability to use TLS 1.2 on ColdFusion 9
+* Friendly for script based code
