@@ -1,5 +1,5 @@
 {
-	"name":"bolthttp"
+	"name":"bolthttp",
     "web":{
         "http":{
             "port":8484
