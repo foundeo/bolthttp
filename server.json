@@ -1,6 +1,8 @@
 {
-    "engine":"adobe@9",
-    "app":{
-        "cfengine":"adobe@2016"
+	"name":"bolthttp"
+    "web":{
+        "http":{
+            "port":8484
+        }
     }
 }
