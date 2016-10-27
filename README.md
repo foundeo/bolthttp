@@ -1,5 +1,7 @@
 # BoltHTTP
 
+[![Build Status](https://travis-ci.org/foundeo/bolthttp.svg?branch=master)](https://travis-ci.org/foundeo/bolthttp)
+
 BoltHTTP is a HTTP client for CFML, it is a CFC that wraps the Apache HttpComponents java library. You can use the `bolthttp` CFC instead of CFHTTP when making HTTP requests within CFML.
 
 ## How do I use it?
