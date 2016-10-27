@@ -11,5 +11,6 @@ install:
 - /tmp/bin/box install
 before_script:
 - /tmp/bin/box server start
+- chmod +x test/test.sh
 script:
 - "./test/test.sh"
