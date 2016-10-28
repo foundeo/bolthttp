@@ -76,7 +76,7 @@ component extends="testbox.system.BaseSpec" {
 			}
 
 			it(title="should have the same response headers", body=function(data) {
-				expect(structKeyList(data.boltResult.responseheader)).toBe(structKeyList(data.cfResult.responseheader));
+				expect( listSort( structKeyList(data.boltResult.responseheader), "text" ) ).toBe( listSort( structKeyList(data.cfResult.responseheader), "text" ) );
 			}, data=data);			
 
 		});
