@@ -17,7 +17,7 @@ install:
 - curl --location 'https://www.ortussolutions.com/parent/download/commandbox/type/bin' -o /tmp/box.zip
 - unzip /tmp/box.zip -d /tmp/bin
 before_script:
-- /tmp/bin/box recipe test/ci.boxr CFENGINE=$CFENGINE
+- /tmp/bin/box recipe recipeFile=test/ci.boxr CFENGINE=$CFENGINE
 - chmod +x test/test.sh
 script:
 - "./test/test.sh"
