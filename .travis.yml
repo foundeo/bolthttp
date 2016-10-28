@@ -2,6 +2,14 @@ language: java
 sudo: false
 jdk:
 - oraclejdk8
+env:
+  matrix:
+    - CFENGINE=lucee@4.5
+    - CFENGINE=lucee@5
+    - CFENGINE=adobe@10
+    - CFENGINE=adobe@11
+    - CFENGINE=adobe@2016
+    - CFENGINE=adobe@9
 before_install:
 - mkdir /tmp/bin
 - export PATH=$PATH:/tmp/bin
@@ -10,7 +18,7 @@ install:
 - unzip /tmp/box.zip -d /tmp/bin
 - /tmp/bin/box install
 before_script:
-- /tmp/bin/box server start
+- /tmp/bin/box server start cfengine=$CFENGINE
 - chmod +x test/test.sh
 script:
 - "./test/test.sh"

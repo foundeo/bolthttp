@@ -44,7 +44,7 @@ component extends="testbox.system.BaseSpec" {
 			},data=data);		
 
 			it(title="should have the same list of response headers", body=function(data) {
-				expect(listSort(StructKeyList(data.cfResult.responseheader), "text")).toBe(listSort(StructKeyList(data.boltResult.responseheader), "text"));
+				expect(listSort(lcase(StructKeyList(data.cfResult.responseheader)), "text")).toBe(listSort(lcase(StructKeyList(data.boltResult.responseheader)), "text"));
 			},data=data);	
 
 			//test headers
@@ -75,9 +75,7 @@ component extends="testbox.system.BaseSpec" {
 
 			}
 
-			it(title="should have the same response headers", body=function(data) {
-				expect( listSort( structKeyList(data.boltResult.responseheader), "text" ) ).toBe( listSort( structKeyList(data.cfResult.responseheader), "text" ) );
-			}, data=data);			
+			
 
 		});
 	}
