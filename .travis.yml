@@ -3,6 +3,8 @@ sudo: false
 jdk:
 - oraclejdk8
 env:
+  global:
+    - TEST_RUNNER_URI=/test/run.cfm
   matrix:
     - CFENGINE=lucee@4.5
     - CFENGINE=lucee@5
@@ -11,13 +13,10 @@ env:
     - CFENGINE=adobe@2016
     - CFENGINE=adobe@9
 before_install:
-- mkdir /tmp/bin
-- export PATH=$PATH:/tmp/bin
+- git clone https://github.com/foundeo/cfmatrix.git cfmatrix
 install:
-- curl --location 'https://www.ortussolutions.com/parent/download/commandbox/type/bin' -o /tmp/box.zip
-- unzip /tmp/box.zip -d /tmp/bin
+- cfmatrix/bin/box recipe recipeFile=cfmatrix/ci.boxr CFENGINE=$CFENGINE
 before_script:
-- /tmp/bin/box recipe recipeFile=test/ci.boxr CFENGINE=$CFENGINE
-- chmod +x test/test.sh
+- chmod +x cfmatrix/run.sh
 script:
-- "./test/test.sh"
+- "./cfmatrix/run.sh"

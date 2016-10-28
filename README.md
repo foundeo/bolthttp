@@ -30,7 +30,7 @@ The request method has the following signature:
 
 ## Advanced Usage
 
-The response struct also contains a key `httpResponse` which is an instance of a [http://hc.apache.org/httpcomponents-core-ga/httpcore/apidocs/org/apache/http/HttpResponse.html](org.apache.http.HttpResponse) object. You should be able to get any part of the HTTP response you need from this object.
+The response struct also contains a key `httpResponse` which is an instance of a [org.apache.http.HttpResponse](http://hc.apache.org/httpcomponents-core-ga/httpcore/apidocs/org/apache/http/HttpResponse.html) object. You should be able to get any part of the HTTP response you need from this object.
 
 If you want to only work with the `HttpResponse` object instead of using the `request()` method of bolthttp you can use the `rawRequest()` method which only returns the `HttpResponse` object. Using `rawRequest` instead of `request().httpResponse` will offer better performance becauase it does not need to parse the response object to build the struct. 
 
