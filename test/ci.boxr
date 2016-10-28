@@ -1,0 +1,2 @@
+install
+server start cfengine=$CFENGINE
