@@ -27,7 +27,7 @@ if (!structKeyExists(url, "reporter")) {
 	</cfif>
 <cfelse>
 	<cfoutput><cfif reporter IS "simple"><h1>BoltHTTP Tests</h1><cfelse>BoltHttp Tests</cfif>
-	<cfif structKeyExists(server, "coldfusion") AND structKeyExists(server.coldfusion, "productversion")>ColdFusion #server.coldfusion.productversion#<cfelseif structKeyExists(server, "lucee")>Lucee #server.lucee.version#</cfif><cfflush>
+	<cfif structKeyExists(server, "lucee")>Lucee #server.lucee.version#<cfelse>ColdFusion #server.coldfusion.productversion#</cfif><cfflush></cfoutput>
 	<cfscript>
 		function exitCode( required numeric code ) {
 			var exitcodeFile = GetDirectoryFromPath( GetCurrentTemplatePath() ) & "/.exitcode";
