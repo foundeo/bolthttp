@@ -13,7 +13,10 @@ component extends="testbox.system.BaseSpec" {
 			data.cfResult = cfHttp.run({url="http://httpbin.org/response-headers?X-Men=y&Server=httpbin&Content-Type=text%2Fplain%3B+charset%3DUTF-8", method="get"});
 
 			
-			
+			if (structKeyExists(server, "lucee") && structKeyExists(data.boltResult.responseheader, "Http_Version")) {
+				//lucee does not have the Http_Version header that CF has
+				structDelete(data.boltResult.responseheader, "Http_Version");
+			}
 			
 
 			it(title="should have the same file content", body=function(data) {
