@@ -1,5 +1,7 @@
 {
-    "dependencies":{
+    "name":"bolthttp",
+    "version":"1.0.0",
+    "devDependencies":{
         "testbox":"^2.3.0"
     },
     "installPaths":{
