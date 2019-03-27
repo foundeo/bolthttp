@@ -1,6 +1,6 @@
 {
     "name":"bolthttp",
-    "version":"1.0.0",
+    "version":"1.0.1",
     "slug":"bolthttp",
     "devDependencies":{
         "testbox":"^2.3.0"
@@ -13,7 +13,7 @@
         "test",
         "testbox"
     ],
-    "location":"foundeo/bolthttp#v1.0.0",
+    "location":"foundeo/bolthttp#v1.0.1",
     "homepage":"https://github.com/foundeo/bolthttp",
     "documentation":"https://github.com/foundeo/bolthttp",
     "repository":{
@@ -29,5 +29,4 @@
         "onRelease":"publish",
         "postPublish":"!git push && !git push --tags"
     }
- 
 }
