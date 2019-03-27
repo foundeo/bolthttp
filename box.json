@@ -1,10 +1,33 @@
 {
     "name":"bolthttp",
     "version":"1.0.0",
+    "slug":"bolthttp",
     "devDependencies":{
         "testbox":"^2.3.0"
     },
     "installPaths":{
         "testbox":"testbox"
+    },
+    "ignore":[
+        "**/.*",
+        "test",
+        "testbox"
+    ],
+    "location":"foundeo/bolthttp#v1.0.0",
+    "homepage":"https://github.com/foundeo/bolthttp",
+    "documentation":"https://github.com/foundeo/bolthttp",
+    "repository":{
+        "type":"git",
+        "URL":"https://github.com/foundeo/bolthttp"
+    },
+    "bugs":"https://github.com/foundeo/bolthttp/issues",
+    "shortDescription":"A CFML HTTP Client",
+    "description":"BoltHTTP is a HTTP client for CFML, it is a CFC that wraps the Apache HttpComponents java library. You can use the bolthttp CFC instead of CFHTTP when making HTTP requests within CFML.",
+    "type":"modules",
+    "scripts":{
+        "postVersion":"package set location='foundeo/bolthttp#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push && !git push --tags"
     }
+ 
 }
