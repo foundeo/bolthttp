@@ -37,16 +37,16 @@ component {
 				case "header":
 				case "cgi":
 					if (structKeyExists(local.p, "encoded") && local.p.encoded) {
-						requestBuilder.addHeader(local.p.name, urlEncodedFormat(local.p.value));
+						requestBuilder.addHeader(javaCast("string", local.p.name), urlEncodedFormat(local.p.value));
 					} else {
-						requestBuilder.addHeader(local.p.name, local.p.value);
-					}	
+						requestBuilder.addHeader(javaCast("string", local.p.name), javaCast("string", local.p.value));
+					}
 					break;
 				case "body":
-					requestBuilder = requestBuilder.setEntity(create("org.apache.http.entity.StringEntity").init(local.p.value));
+					requestBuilder = requestBuilder.setEntity(create("org.apache.http.entity.StringEntity").init(javaCast("string", local.p.value)));
 					break;
 				case "formfield":
-					requestBuilder = requestBuilder.addParameter(local.p.name, local.p.value);
+					requestBuilder = requestBuilder.addParameter(javaCast("string", local.p.name), javaCast("string", local.p.value));
 					break;
 				case "cookie":
 					//todo cookies
