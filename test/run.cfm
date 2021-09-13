@@ -1,7 +1,11 @@
 <cfsetting requesttimeout="150" enablecfoutputonly="true">
 <cfscript>
 if (!structKeyExists(url, "reporter")) {
-	reporter = cgi.server_protocol == "CLI/1.0" ? "text" : "simple";
+	if (cgi.http_user_agent contains "curl") {
+		reporter = "text";
+	else {
+		reporter = cgi.server_protocol == "CLI/1.0" ? "text" : "simple";
+	}
 }
 </cfscript>
 <cfif structKeyExists(server, "coldfusion") AND structKeyExists(server.coldfusion, "productname") AND server.coldfusion.productname contains "ColdFusion" AND ListFirst(server.coldfusion.productversion) EQ 9>
