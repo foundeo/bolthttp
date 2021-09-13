@@ -5,6 +5,7 @@ component extends="testbox.system.BaseSpec" {
 
 	function run(testResults, testBox) {
 		
+		/* THESE servers do not seam to be working
 		cfHttp = new util.cfhttp();
 		describe("SNI Tests", function() {
 			var sniHosts = ["mallory.sni.velox.ch", "dave.sni.velox.ch", "alice.sni.velox.ch"];
@@ -34,6 +35,7 @@ component extends="testbox.system.BaseSpec" {
 
 			
 		});
+		*/
 	}
 
 }

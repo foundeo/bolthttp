@@ -29,10 +29,6 @@ if (!structKeyExists(url, "reporter")) {
 	<cfoutput><cfif reporter IS "simple"><h1>BoltHTTP Tests</h1><cfelse>BoltHttp Tests</cfif>
 	<cfif structKeyExists(server, "lucee")>Lucee #server.lucee.version#<cfelse>ColdFusion #server.coldfusion.productversion#</cfif><cfflush></cfoutput>
 	<cfscript>
-		function exitCode( required numeric code ) {
-			var exitcodeFile = GetDirectoryFromPath( GetCurrentTemplatePath() ) & "/.exitcode";
-			FileWrite( exitcodeFile, code );
-		}
 		try {
 			
 			testbox = new testbox.system.TestBox( options={}, reporter=reporter, directory="tests");
@@ -46,3 +42,11 @@ if (!structKeyExists(url, "reporter")) {
 		}
 	</cfscript>
 </cfif>
+<cffunction name="exitCode">
+    <cfargument name="code" type="numeric" hint="1=error 0=good">
+	<cfset var exitcodeFile = GetDirectoryFromPath( GetCurrentTemplatePath() ) & "/.exitcode">
+	<cfif arguments.code NEQ 0>
+		<cfheader statuscode="500" statustext="Error">
+	</cfif>
+	<cfset fileWrite(exitcodeFile, code)>
+</cffunction>
