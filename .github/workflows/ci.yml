@@ -22,6 +22,8 @@ jobs:
     strategy:
       matrix:
         cfengine: ["lucee@5.3", "adobe@2018"]
+    env:
+      CFENGINE: ${{ matrix.cfengine }}
     steps:
       - uses: actions/checkout@v2
 
