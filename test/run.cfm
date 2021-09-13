@@ -3,7 +3,7 @@
 if (!structKeyExists(url, "reporter")) {
 	if (cgi.http_user_agent contains "curl") {
 		reporter = "text";
-	else {
+	} else {
 		reporter = cgi.server_protocol == "CLI/1.0" ? "text" : "simple";
 	}
 }
