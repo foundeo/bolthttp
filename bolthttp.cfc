@@ -151,7 +151,7 @@ component {
 					result.text = true;
 				}
 			}
-		} else if (ListFindNoCase("png,jpg,jpeg,gif,pdf", ListFirst(ListLast(url, "."), "?"))) {
+		} else if (ListFindNoCase("png,jpg,jpeg,gif,pdf", ListFirst(ListLast(arguments.url, "."), "?"))) {
 			result.text = false;
 		} else {
 			result.text = true;
